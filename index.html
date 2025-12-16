@@ -142,18 +142,18 @@
       // ==========================================
       // 1. RESOURCES CONFIG Nqk_khanhbk
       // ==========================================
-      const MUSIC_URL = "assets/audio/audio.mp3";
+      const MUSIC_URL = "Merry_Christmas/assets/audio/audio.mp3";
       let bgMusic = new Audio(MUSIC_URL);
       bgMusic.loop = true;
       bgMusic.volume = 1.0;
 
       const loader = new THREE.TextureLoader();
       const photoFiles = [
-        "assets/images/image1.jpeg",
-        "assets/images/image2.jpeg",
-        "assets/images/image3.jpeg",
-        "assets/images/image4.jpeg",
-        "assets/images/image5.jpeg",
+        "Merry_Christmas/assets/images/image1.jpeg",
+        "Merry_Christmas/assets/images/image2.jpeg",
+        "Merry_Christmas/assets/images/image3.jpeg",
+        "Merry_Christmas/assets/images/image4.jpeg",
+        "Merry_Christmas/assets/images/image5.jpeg",
       ];
       const photoTextures = [];
       photoFiles.forEach((f, i) => (photoTextures[i] = loader.load(f)));
