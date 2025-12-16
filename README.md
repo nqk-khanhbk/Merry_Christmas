@@ -1,4 +1,4 @@
-# Magic Christmas (WebAR Hands)
+# Magic Christmas (Kain Nguyen)
 
 Hướng dẫn chạy demo Noel nhận diện cử chỉ tay (Mediapipe + Three.js) hiển thị cây thông, pháo hoa và bộ ảnh.
 
@@ -9,8 +9,7 @@ Hướng dẫn chạy demo Noel nhận diện cử chỉ tay (Mediapipe + Three.
 
 ## Cấu trúc thư mục
 - `Merry_Christmas/`
-	- `index ver1.1.html`: bản cuối, nên chạy file này.
-	- `index ver1.0.html`: bản cũ.
+	- `index.html`: bản cuối, nên chạy file này.
 	- `audio.mp3`, `image1.jpeg` → `image5.jpeg`: nhạc nền và ảnh hiển thị.
 
 ## Cách chạy nhanh
