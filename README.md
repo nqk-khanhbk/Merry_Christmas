@@ -15,7 +15,7 @@ Hướng dẫn chạy demo Noel nhận diện cử chỉ tay (Mediapipe + Three.
 ## Cách chạy nhanh
 1. Mở thư mục này trong VS Code.
 2. Dùng một trong hai cách tạo server cục bộ tại thư mục `Merry_Christmas/`:
-	 - **VS Code Live Server**: chuột phải `index ver1.1.html` → `Open with Live Server`.
+	 - **VS Code Live Server**: chuột phải `index1.html` → `Open with Live Server`.
 	 - **Python** (nếu có):
 		 ```bash
 		 cd Merry_Christmas
