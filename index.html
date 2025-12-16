@@ -711,7 +711,12 @@
           width: 320,
           height: 240,
         });
-        cameraUtils.start();
+        cameraUtils.start().catch((err) => {
+          const el = document.getElementById("error-log");
+          el.style.display = "block";
+          el.textContent = `Camera error: ${err.name} - ${err.message}`;
+          console.error(err);
+        });
       }
 
       window.addEventListener("resize", () => {
