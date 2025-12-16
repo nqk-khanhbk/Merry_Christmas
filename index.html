@@ -115,11 +115,389 @@
         z-index: 999;
         padding: 10px;
       }
+
+      /* ==========================================
+         INTRO SCREEN - Christmas Characters
+         ========================================== */
+      #intro-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          #0c1445 0%,
+          #1a0a2e 50%,
+          #0d1b3e 100%
+        );
+        z-index: 50;
+        overflow: hidden;
+        transition: opacity 1s ease-out;
+      }
+
+      #intro-screen.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      /* Snowflakes */
+      .snowflake {
+        position: absolute;
+        color: white;
+        font-size: 1.5em;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #b3e5fc;
+        animation: fall linear infinite;
+        pointer-events: none;
+      }
+
+      @keyframes fall {
+        0% {
+          transform: translateY(-10vh) rotate(0deg);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(110vh) rotate(360deg);
+          opacity: 0.3;
+        }
+      }
+
+      /* Christmas Characters Container */
+      .character {
+        position: absolute;
+        font-size: 80px;
+        filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8))
+          drop-shadow(0 0 40px rgba(255, 215, 0, 0.6));
+        transition: all 0.3s ease;
+        cursor: default;
+      }
+
+      .character:hover {
+        transform: scale(1.2);
+        filter: drop-shadow(0 0 30px rgba(255, 255, 255, 1))
+          drop-shadow(0 0 60px rgba(255, 215, 0, 1));
+      }
+
+      /* Santa Claus */
+      #santa {
+        animation: santaMove 8s ease-in-out infinite,
+          float 2s ease-in-out infinite;
+      }
+
+      @keyframes santaMove {
+        0%,
+        100% {
+          left: -10%;
+          top: 15%;
+        }
+        25% {
+          left: 30%;
+          top: 25%;
+        }
+        50% {
+          left: 70%;
+          top: 10%;
+        }
+        75% {
+          left: 40%;
+          top: 20%;
+        }
+      }
+
+      /* Reindeer */
+      #reindeer {
+        animation: reindeerMove 10s ease-in-out infinite,
+          bounce 1s ease-in-out infinite;
+      }
+
+      @keyframes reindeerMove {
+        0%,
+        100% {
+          right: -10%;
+          top: 20%;
+        }
+        25% {
+          right: 25%;
+          top: 30%;
+        }
+        50% {
+          right: 60%;
+          top: 15%;
+        }
+        75% {
+          right: 35%;
+          top: 25%;
+        }
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+      }
+
+      /* Snowman */
+      #snowman {
+        animation: snowmanMove 12s ease-in-out infinite,
+          wobble 2s ease-in-out infinite;
+      }
+
+      @keyframes snowmanMove {
+        0%,
+        100% {
+          left: 10%;
+          bottom: 5%;
+        }
+        33% {
+          left: 45%;
+          bottom: 8%;
+        }
+        66% {
+          left: 75%;
+          bottom: 3%;
+        }
+      }
+
+      @keyframes wobble {
+        0%,
+        100% {
+          transform: rotate(-5deg);
+        }
+        50% {
+          transform: rotate(5deg);
+        }
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0) rotate(-3deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(3deg);
+        }
+      }
+
+      /* Sleigh with Santa */
+      #sleigh {
+        animation: sleighFly 15s linear infinite;
+        font-size: 60px;
+      }
+
+      @keyframes sleighFly {
+        0% {
+          left: -15%;
+          top: 8%;
+          transform: rotate(-5deg);
+        }
+        100% {
+          left: 110%;
+          top: 8%;
+          transform: rotate(-5deg);
+        }
+      }
+
+      /* Christmas Tree */
+      #intro-tree {
+        animation: treeGlow 2s ease-in-out infinite,
+          treeFloat 3s ease-in-out infinite;
+      }
+
+      @keyframes treeGlow {
+        0%,
+        100% {
+          filter: drop-shadow(0 0 20px #00ff00) drop-shadow(0 0 40px #ffd700);
+        }
+        50% {
+          filter: drop-shadow(0 0 40px #00ff00) drop-shadow(0 0 80px #ff0000);
+        }
+      }
+
+      @keyframes treeFloat {
+        0%,
+        100% {
+          transform: translateY(0) scale(1);
+        }
+        50% {
+          transform: translateY(-10px) scale(1.05);
+        }
+      }
+
+      /* Gift boxes */
+      .gift {
+        position: absolute;
+        font-size: 50px;
+        animation: giftBounce 1.5s ease-in-out infinite;
+        filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.8));
+      }
+
+      @keyframes giftBounce {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0deg);
+        }
+        25% {
+          transform: translateY(-20px) rotate(10deg);
+        }
+        75% {
+          transform: translateY(-10px) rotate(-10deg);
+        }
+      }
+
+      /* Stars twinkling */
+      .star {
+        position: absolute;
+        color: #ffd700;
+        font-size: 30px;
+        animation: twinkle 1.5s ease-in-out infinite;
+      }
+
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 0.3;
+          transform: scale(0.8);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.2);
+        }
+      }
+
+      /* Intro Title */
+      #intro-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 60;
+      }
+
+      #intro-title h1 {
+        font-family: "Times New Roman", serif;
+        font-size: 4em;
+        color: #ffd700;
+        text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ff0000,
+          0 0 40px #ff0000, 3px 3px 0 #8b0000;
+        margin: 0;
+        animation: titleGlow 2s ease-in-out infinite;
+      }
+
+      @keyframes titleGlow {
+        0%,
+        100% {
+          text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ff0000,
+            0 0 40px #ff0000, 3px 3px 0 #8b0000;
+        }
+        50% {
+          text-shadow: 0 0 20px #ffd700, 0 0 40px #ffd700, 0 0 60px #ff0000,
+            0 0 80px #ff0000, 3px 3px 0 #8b0000;
+        }
+      }
+
+      #intro-title p {
+        color: #fff;
+        font-size: 1.2em;
+        text-shadow: 0 0 10px #fff;
+        margin-top: 20px;
+        animation: fadeInOut 3s ease-in-out infinite;
+      }
+
+      @keyframes fadeInOut {
+        0%,
+        100% {
+          opacity: 0.5;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
     </style>
   </head>
 
   <body>
     <div id="error-log"></div>
+
+    <!-- ==========================================
+         INTRO SCREEN - Christmas Welcome
+         ========================================== -->
+    <div id="intro-screen">
+      <!-- Snowflakes will be generated by JS -->
+
+      <!-- Title -->
+      <div id="intro-title">
+        <h1>🎄 Merry Christmas 🎄</h1>
+        <p>✨ Welcome to the Kain Nguyễn ✨</p>
+      </div>
+
+      <!-- Santa on Sleigh -->
+      <div id="sleigh" class="character">🛷🎅</div>
+
+      <!-- Santa Walking -->
+      <div id="santa" class="character">🎅</div>
+
+      <!-- Reindeer -->
+      <div id="reindeer" class="character">🦌</div>
+
+      <!-- Snowman -->
+      <div id="snowman" class="character">⛄</div>
+
+      <!-- Christmas Tree -->
+      <div
+        id="intro-tree"
+        class="character"
+        style="
+          left: 50%;
+          bottom: 5%;
+          transform: translateX(-50%);
+          font-size: 100px;
+        "
+      >
+        🎄
+      </div>
+
+      <!-- Gift Boxes -->
+      <div class="gift" style="left: 20%; bottom: 10%; animation-delay: 0s">
+        🎁
+      </div>
+      <div class="gift" style="left: 35%; bottom: 8%; animation-delay: 0.3s">
+        🎁
+      </div>
+      <div class="gift" style="right: 25%; bottom: 12%; animation-delay: 0.6s">
+        🎁
+      </div>
+      <div class="gift" style="right: 15%; bottom: 6%; animation-delay: 0.9s">
+        🎁
+      </div>
+
+      <!-- Stars -->
+      <div class="star" style="top: 10%; left: 10%; animation-delay: 0s">
+        ⭐
+      </div>
+      <div class="star" style="top: 15%; left: 30%; animation-delay: 0.5s">
+        ✨
+      </div>
+      <div class="star" style="top: 8%; right: 20%; animation-delay: 1s">
+        ⭐
+      </div>
+      <div class="star" style="top: 20%; right: 35%; animation-delay: 1.5s">
+        ✨
+      </div>
+      <div class="star" style="top: 12%; left: 60%; animation-delay: 0.3s">
+        🌟
+      </div>
+      <div class="star" style="top: 25%; left: 80%; animation-delay: 0.8s">
+        ⭐
+      </div>
+      <div class="star" style="top: 5%; left: 45%; animation-delay: 1.2s">
+        ✨
+      </div>
+    </div>
 
     <!-- UI Nqk_khanhbk -->
     <div id="ui-layer">
@@ -142,7 +520,8 @@
       playsinline
       style="display: none"
     ></video>
-    <canvas id="camera-preview"></canvas>
+    <!-- Canvas preview camera: nội bộ 120x90, hiển thị khớp với khung -->
+    <canvas id="camera-preview" width="120" height="90"></canvas>
 
     <script>
       // ==========================================
@@ -643,7 +1022,43 @@
         renderer.render(scene, camera);
       }
 
+      // ==========================================
+      // INTRO SCREEN FUNCTIONS
+      // ==========================================
+      function createSnowflakes() {
+        const introScreen = document.getElementById("intro-screen");
+        const snowflakeChars = ["❄", "❅", "❆", "✻", "✼", "❉"];
+
+        for (let i = 0; i < 50; i++) {
+          const snowflake = document.createElement("div");
+          snowflake.className = "snowflake";
+          snowflake.textContent =
+            snowflakeChars[Math.floor(Math.random() * snowflakeChars.length)];
+          snowflake.style.left = Math.random() * 100 + "%";
+          snowflake.style.animationDuration = Math.random() * 5 + 5 + "s";
+          snowflake.style.animationDelay = Math.random() * 5 + "s";
+          snowflake.style.fontSize = Math.random() * 1.5 + 0.5 + "em";
+          snowflake.style.opacity = Math.random() * 0.5 + 0.5;
+          introScreen.appendChild(snowflake);
+        }
+      }
+
+      function hideIntroScreen() {
+        const introScreen = document.getElementById("intro-screen");
+        introScreen.classList.add("hidden");
+        // Remove after animation
+        setTimeout(() => {
+          introScreen.style.display = "none";
+        }, 1000);
+      }
+
+      // Initialize intro on page load
+      document.addEventListener("DOMContentLoaded", createSnowflakes);
+
       function startSystem() {
+        // Hide intro screen with animation
+        hideIntroScreen();
+
         document.getElementById("btnStart").style.display = "none";
         bgMusic.play().catch((e) => console.log(e));
         init3D();
@@ -664,8 +1079,9 @@
         });
 
         hands.onResults((results) => {
-          ctx.clearRect(0, 0, 100, 75);
-          ctx.drawImage(results.image, 0, 0, 100, 75);
+          // Vẽ vừa khít toàn bộ canvas (khớp với khung CSS)
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.drawImage(results.image, 0, 0, canvas.width, canvas.height);
 
           // --- Hand Logic  ---
           if (results.multiHandLandmarks.length === 2) {
