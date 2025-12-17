@@ -432,7 +432,7 @@
       <!-- Title -->
       <div id="intro-title">
         <h1>🎄 Merry Christmas 🎄</h1>
-        <p>✨ Welcome to the Kain Nguyễn ✨</p>
+        <p>✨ Welcome to the Tuệ Khánh ✨</p>
       </div>
 
       <!-- Santa on Sleigh -->
@@ -535,10 +535,10 @@
       const loader = new THREE.TextureLoader();
       const photoFiles = [
         "Merry_Christmas/assets/images/image1.jpg",
-        "Merry_Christmas/assets/images/image2.jpeg",
-        "Merry_Christmas/assets/images/image3.jpeg",
-        "Merry_Christmas/assets/images/image4.jpeg",
-        "Merry_Christmas/assets/images/image5.jpeg",
+        "Merry_Christmas/assets/images/image2.jpg",
+        "Merry_Christmas/assets/images/image3.jpg",
+        "Merry_Christmas/assets/images/image4.jpg",
+        "Merry_Christmas/assets/images/image5.jpg",
       ];
       const photoTextures = [];
       photoFiles.forEach((f, i) => (photoTextures[i] = loader.load(f)));
@@ -828,24 +828,24 @@
         starMesh.position.set(0, CONFIG.treeHeight / 2 + 2, 0);
         scene.add(starMesh);
 
-        // I LOVE YOU TEXT Nqk_khanhbk
+        // TEXT Nqk_khanhbk
         const loveCanvas = document.createElement("canvas");
         loveCanvas.width = 1024;
         loveCanvas.height = 256;
         const lCtx = loveCanvas.getContext("2d");
-        lCtx.font = 'bold 120px "Segoe UI", sans-serif';
+        lCtx.font = 'bold 140px "Segoe UI", sans-serif';
         lCtx.fillStyle = "#FF69B4";
         lCtx.textAlign = "center";
         lCtx.shadowColor = "#FF1493";
         lCtx.shadowBlur = 40;
-        lCtx.fillText("ĐỪNG BUỒN NỮA ❤️", 512, 130);
+        lCtx.fillText("愛してます。 ❤️", 512, 130);
         const loveTex = new THREE.CanvasTexture(loveCanvas);
         const loveMat = new THREE.MeshBasicMaterial({
           map: loveTex,
           transparent: true,
           blending: THREE.AdditiveBlending,
         });
-        loveMesh = new THREE.Mesh(new THREE.PlaneGeometry(70, 18), loveMat);
+        loveMesh = new THREE.Mesh(new THREE.PlaneGeometry(55, 14), loveMat);
         loveMesh.position.set(0, 0, 20);
         loveMesh.visible = false;
         scene.add(loveMesh);
