@@ -156,6 +156,7 @@
           transform: translateY(-10vh) rotate(0deg);
           opacity: 1;
         }
+
         100% {
           transform: translateY(110vh) rotate(360deg);
           opacity: 0.3;
@@ -190,14 +191,17 @@
           left: -10%;
           top: 15%;
         }
+
         25% {
           left: 30%;
           top: 25%;
         }
+
         50% {
           left: 70%;
           top: 10%;
         }
+
         75% {
           left: 40%;
           top: 20%;
@@ -216,14 +220,17 @@
           right: -10%;
           top: 20%;
         }
+
         25% {
           right: 25%;
           top: 30%;
         }
+
         50% {
           right: 60%;
           top: 15%;
         }
+
         75% {
           right: 35%;
           top: 25%;
@@ -235,6 +242,7 @@
         100% {
           transform: translateY(0);
         }
+
         50% {
           transform: translateY(-15px);
         }
@@ -252,10 +260,12 @@
           left: 10%;
           bottom: 5%;
         }
+
         33% {
           left: 45%;
           bottom: 8%;
         }
+
         66% {
           left: 75%;
           bottom: 3%;
@@ -267,6 +277,7 @@
         100% {
           transform: rotate(-5deg);
         }
+
         50% {
           transform: rotate(5deg);
         }
@@ -277,6 +288,7 @@
         100% {
           transform: translateY(0) rotate(-3deg);
         }
+
         50% {
           transform: translateY(-20px) rotate(3deg);
         }
@@ -294,6 +306,7 @@
           top: 8%;
           transform: rotate(-5deg);
         }
+
         100% {
           left: 110%;
           top: 8%;
@@ -312,6 +325,7 @@
         100% {
           filter: drop-shadow(0 0 20px #00ff00) drop-shadow(0 0 40px #ffd700);
         }
+
         50% {
           filter: drop-shadow(0 0 40px #00ff00) drop-shadow(0 0 80px #ff0000);
         }
@@ -322,6 +336,7 @@
         100% {
           transform: translateY(0) scale(1);
         }
+
         50% {
           transform: translateY(-10px) scale(1.05);
         }
@@ -340,9 +355,11 @@
         100% {
           transform: translateY(0) rotate(0deg);
         }
+
         25% {
           transform: translateY(-20px) rotate(10deg);
         }
+
         75% {
           transform: translateY(-10px) rotate(-10deg);
         }
@@ -362,6 +379,7 @@
           opacity: 0.3;
           transform: scale(0.8);
         }
+
         50% {
           opacity: 1;
           transform: scale(1.2);
@@ -394,6 +412,7 @@
           text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ff0000,
             0 0 40px #ff0000, 3px 3px 0 #8b0000;
         }
+
         50% {
           text-shadow: 0 0 20px #ffd700, 0 0 40px #ffd700, 0 0 60px #ff0000,
             0 0 80px #ff0000, 3px 3px 0 #8b0000;
@@ -413,6 +432,7 @@
         100% {
           opacity: 0.5;
         }
+
         50% {
           opacity: 1;
         }
@@ -833,19 +853,19 @@
         loveCanvas.width = 1024;
         loveCanvas.height = 256;
         const lCtx = loveCanvas.getContext("2d");
-        lCtx.font = 'bold 140px "Segoe UI", sans-serif';
+        lCtx.font = 'bold 110px "Segoe UI", sans-serif';
         lCtx.fillStyle = "#FF69B4";
         lCtx.textAlign = "center";
         lCtx.shadowColor = "#FF1493";
         lCtx.shadowBlur = 40;
-        lCtx.fillText("愛してます。 ❤️", 512, 130);
+        lCtx.fillText("愛してます。❤️", 512, 140);
         const loveTex = new THREE.CanvasTexture(loveCanvas);
         const loveMat = new THREE.MeshBasicMaterial({
           map: loveTex,
           transparent: true,
           blending: THREE.AdditiveBlending,
         });
-        loveMesh = new THREE.Mesh(new THREE.PlaneGeometry(55, 14), loveMat);
+        loveMesh = new THREE.Mesh(new THREE.PlaneGeometry(70, 18), loveMat);
         loveMesh.position.set(0, 0, 20);
         loveMesh.visible = false;
         scene.add(loveMesh);
